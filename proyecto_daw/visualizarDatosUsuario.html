@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Usuario</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/visualizarDatosUsuario.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/modalEliminar.css">
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="user-details">
+            <h1 class="user-title">DETALLES DEL USUARIO</h1>
+            <div class="profile-pic-container">
+                <img src="usuario.png" alt="Foto de Perfil" class="profile-pic" id="profilePic">
+            </div>
+            <div class="user-info">
+                <p><strong>Nombre:</strong> <span id="nombre">Juan Pérez</span></p>
+                <p><strong>Correo Electrónico:</strong> <span id="correo">juan.perez@example.com</span></p>
+                <p><strong>Sexo:</strong> <span id="sexo">Hombre</span></p>
+                <p><strong>Peso (kg):</strong> <span id="peso">70</span></p>
+                <p><strong>Altura (cm):</strong> <span id="altura">175</span></p>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn delete-button">ELIMINAR USUARIO</button>
+                <button type="button" class="btn edit-button">EDITAR USUARIO</button>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'header.js';
+                document.body.appendChild(script);
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Adjuntar evento para cargar y mostrar el modal de eliminación al hacer clic en el botón de eliminar
+            document.querySelector('.delete-button').addEventListener('click', () => {
+                fetch('modalEliminar.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.body.insertAdjacentHTML('beforeend', data);
+                        const script = document.createElement('script');
+                        script.src = 'modalEliminar.js';
+                        document.body.appendChild(script);
+                    })
+                    .catch(err => console.error('Error loading modal:', err));
+            });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Recetas</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/misDietasUsuario.css">
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="diets-section">
+            <div class="header">
+                <h1 class="title">MIS RECETAS</h1>
+                <p class="description">Tus recetas se almacenarán en este espacio pudiendo cambiarlas y eliminarlas a tu gusto.</p>
+            </div>
+            <div class="diets-list">
+                <!-- Las recetas se cargarán aquí dinámicamente -->
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script src="misRecetas.js" defer></script>
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                    script.src = 'header.js';
+                    document.body.appendChild(script);
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

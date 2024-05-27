@@ -1,0 +1,97 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+main {
+  flex: 1;
+  margin: 2rem auto; /* Adjust the margin if needed */
+  width: 90%;
+  max-width: 1200px;
+}
+
+.footer-section {
+  background: #151414;
+  position: relative;
+  text-align: center; /* Center align footer text */
+}
+
+.footer-content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.footer-text p {
+  color: #7e7e7e;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.footer-menu {
+  margin-top: 1rem;
+}
+
+.footer-menu ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.footer-menu li {
+  display: inline;
+  margin: 0 1rem;
+}
+
+.footer-menu li a {
+  color: #878787;
+  text-decoration: none;
+}
+
+.footer-menu li a:hover {
+  color: #800000; /* Granate color */
+}
+
+.footer-widget-heading h3::before {
+  background: #800000; /* Granate color */
+}
+
+.footer-widget ul li a:hover {
+  color: #800000; /* Granate color */
+}
+
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+
+.subscribe-form button {
+  background: #800000; /* Granate color */
+  border: 1px solid #800000; /* Granate color */
+}
+
+.copyright-area {
+  background: #202020;
+  padding: 25px 0;
+}
+
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+
+copyright-text p a {
+  color: #800000; /* Granate color */
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/vistas/login.css">
+    <link rel="stylesheet" href="vistas/header.css">
+    <link rel="stylesheet" href="vistas/footer.css">
+    <link rel="stylesheet" href="vistas/register.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1>Register</h1>
+            <form id="register-form">
+                <div class="input-group">
+                    <label for="username">Username*</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password*</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="repeat-password">Repeat Password*</label>
+                    <input type="password" id="repeat-password" name="repeat-password" required>
+                    <span id="password-error" class="error-message"></span>
+                </div>
+                <div class="input-group">
+                    <input type="checkbox" id="terms-checkbox" name="terms-checkbox">
+                    <label for="terms-checkbox">He leído y acepto las condiciones de uso de la app</label>
+                    <span id="terms-error" class="error-message"></span>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p>Ya estás registrado? <a href="login.html">Haz login</a></p>
+        </div>
+    </div>
+    <div id="footer-container"></div>
+    <script src="register.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-container').innerHTML = data;
+                    const script = document.createElement('script');
+                    script.src = 'header.js';
+                    document.body.appendChild(script);
+                });
+
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header container styling */
+#header-container {
+    width: 100%;
+}
+
+/* Footer container styling */
+#footer-container {
+    width: 100%;
+}
+
+/* Login container styling */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    margin-top: 70px;
+}
+
+/* Login box styling */
+.login-box {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Heading styling */
+h1 {
+    margin: 0;
+    color: #800020;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Input group styling */
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Label styling */
+.input-group label {
+    display: block;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+/* Input styling */
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+.btn {
+    background-color: #800020;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #66001a;
+}

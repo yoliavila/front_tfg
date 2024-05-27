@@ -1,0 +1,59 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+.recipe-video {
+    text-align: center;
+    margin: 2rem 0; /* Añadir margen superior e inferior */
+}
+
+.recipe-video video {
+    width: 200%; /* Ajuste del tamaño del video al 300% */
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.recipe-details {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem; /* Añadir margen inferior */
+}
+
+#recipe-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#recipe-description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+#recipe-steps {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+#recipe-steps li {
+    font-size: 16px;
+    margin-bottom: 1rem;
+}
+
+/* Añadir margen al header y footer */
+#header-placeholder, #footer-placeholder {
+    margin: 2rem 0;
+}

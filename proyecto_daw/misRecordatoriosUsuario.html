@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorios</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/misRecordatoriosUsuario.css">
+    <script src="/proyecto_daw/misRecordatorios.js" defer></script>
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="reminders-section">
+            <div class="header">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1 class="title">RECORDATORIOS</h1>
+                <div class="profile-icon-container">
+                    <img src="usuario.png" alt="Perfil" class="profile-icon">
+                </div>
+            </div>
+            <p class="description">Aquí podrás añadir, borrar y editar recordatorios.</p>
+            <div class="actions">
+                <button class="btn delete-button" id="enableDeleteModeButton">-</button>
+                <button class="btn add-button" id="addReminderButton">+</button>
+            </div>
+            <div class="reminders-list">
+                <!-- Los recordatorios se cargarán aquí dinámicamente -->
+            </div>
+            <div class="delete-actions" style="display: none;">
+                <button class="btn delete-button" id="deleteSelectedButton">Borrar</button>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'header.js';
+                document.body.appendChild(script);
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

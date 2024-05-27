@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Sports and Nutrition</title>
+    <link rel="stylesheet" href="/vistas/header.css">
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <section class="intro">
+            <h1>Welcome to Sports and Nutrition</h1>
+            <p>Discover the best diets and exercises to stay fit and healthy.</p>
+        </section>
+        <section class="content">
+            <div class="card">
+                <img src="diet.jpg" alt="Diet">
+                <h2>Diets</h2>
+                <p>Find a variety of healthy diet plans tailored to your needs.</p>
+            </div>
+            <div class="card">
+                <img src="exercise.jpg" alt="Exercise">
+                <h2>Exercises</h2>
+                <p>Explore exercises to improve your fitness and strength.</p>
+            </div>
+        </section>
+    </main>
+    <script src="/vistas/header.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/partials/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header').innerHTML = data;
+                    const script = document.createElement('script');
+                    script.src = '/vistas/header.js';
+                    document.body.appendChild(script);
+                });
+        });
+    </script>
+</body>
+</html>

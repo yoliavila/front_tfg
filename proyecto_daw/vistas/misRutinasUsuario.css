@@ -1,0 +1,87 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+.routines-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title {
+    font-size: 28px; /* Incremented font size */
+    color: #333;
+}
+
+.description {
+    font-size: 18px; /* Incremented font size */
+    color: #666;
+}
+
+.routines-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.routine-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 320px; /* Incremented width */
+    margin: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.routine-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(178, 34, 34, 0.7); /* Garnet shadow */
+}
+
+.routine-image {
+    width: 100%;
+    height: 220px; /* Incremented height */
+    object-fit: cover;
+}
+
+.routine-title {
+    font-size: 20px; /* Incremented font size */
+    margin: 1rem 0 0.5rem 0;
+    color: #B22222;
+}
+
+.routine-description {
+    font-size: 16px; /* Incremented font size */
+    margin: 0.5rem 1rem;
+    color: #666;
+}
+
+.routine-link {
+    display: inline-block;
+    margin: 1rem 0;
+    font-size: 16px; /* Incremented font size */
+    color: #007bff;
+    text-decoration: none;
+}
+
+.routine-link:hover {
+    text-decoration: underline;
+}

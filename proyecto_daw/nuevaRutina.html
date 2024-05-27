@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Rutina de Ejercicios</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/nuevaRutina.css">
+    <script src="/proyecto_daw/nuevaRutina.js" defer></script>
+
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="routine-form-section">
+            <h1 class="form-title">Crear Nueva Rutina de Ejercicios</h1>
+            <form class="routine-form">
+                <div class="form-group">
+                    <label for="titulo" class="form-label">Título de la Rutina:</label>
+                    <input type="text" id="titulo" name="titulo" class="form-input" placeholder="Título de la rutina" required>
+                </div>
+                <div class="form-group">
+                    <label for="resumen" class="form-label">Breve Resumen:</label>
+                    <textarea id="resumen" name="resumen" class="form-input" placeholder="Breve resumen de la rutina" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion" class="form-label">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" class="form-input" placeholder="Descripción de la rutina" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="entrenador" class="form-label">Nombre del Entrenador:</label>
+                    <input type="text" id="entrenador" name="entrenador" class="form-input" placeholder="Nombre del entrenador" required>
+                </div>
+                <div class="form-group">
+                    <label for="foto" class="form-label">Foto de la Rutina:</label>
+                    <input type="file" id="foto" name="foto" class="form-input" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="video" class="form-label">Video de la Rutina:</label>
+                    <input type="file" id="video" name="video" class="form-input" accept="video/*" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn submit-button">Crear Rutina</button>
+                    <button type="reset" class="btn reset-button">Limpiar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'header.js';
+                document.body.appendChild(script);
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

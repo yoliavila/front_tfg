@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Rutina</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/verRutina.css">
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <h1 id="routine-title">Título de la Rutina</h1>
+        <div class="routine-container">
+            <section class="routine-video">
+                <video controls>
+                    <source src="ruta_del_video.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </section>
+            <section class="trainer-info">
+                <div class="trainer-pic-container">
+                    <img src="entrenadora1.jpg" alt="Foto del Entrenador" class="trainer-pic">
+                </div>
+                <p class="trainer-name">Nombre del Entrenador</p>
+            </section>
+        </div>
+        <section class="routine-details">
+            <p id="routine-description">Descripción de la rutina.</p>
+            <p id="routine-group">Grupo Muscular: <span>Grupo muscular ejercitado</span></p>
+            <p id="routine-duration">Duración: <span>Tiempo de duración</span></p>
+            <p id="routine-summary">Resumen: <span>Breve resumen de la rutina</span></p>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'header.js';
+                document.body.appendChild(script);
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

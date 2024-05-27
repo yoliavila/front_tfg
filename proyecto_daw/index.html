@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Deportes y Nutrición</title>
+    <link rel="stylesheet" href="vistas/header.css">
+    <link rel="stylesheet" href="vistas/footer.css">
+    <link rel="stylesheet" href="vistas/index.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <main class="main-class">
+        <section class="hero">
+            <div class="carousel">
+                <img src="hero1.jpeg" class="carousel-img active">
+                <img src="hero2.jpeg" class="carousel-img">
+                <img src="hero3.jpg" class="carousel-img">
+            </div>
+            <div class="hero-content">
+                <h1>Bienvenido a Deportes y Nutrición</h1>
+                <p>Descubre las mejores dietas y ejercicios para mantenerte en forma y saludable.</p>
+                <a href="#services" class="btn">Explorar Más</a>
+            </div>
+        </section>
+        
+        <section id="services" class="services">
+            <h2>Nuestros Servicios</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <img src="nutricion.jpg" alt="Nutrición">
+                    <h3>Nutrición</h3>
+                    <p>Planes de dieta personalizados para adaptarse a tu estilo de vida.</p>
+                </div>
+                <div class="card">
+                    <img src="ejercicio.jpg" alt="Ejercicio">
+                    <h3>Ejercicio</h3>
+                    <p>Entrenamientos efectivos adaptados a tus objetivos.</p>
+                </div>
+                <div class="card">
+                    <img src="coaching.jpg" alt="Entrenamiento">
+                    <h3>Entrenamiento</h3>
+                    <p>Coaching personalizado para mantenerte en el camino correcto.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="about">
+            <h2>Sobre Nosotros</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Nos comprometemos a ayudarte a alcanzar tus objetivos de salud y fitness con planes personalizados y orientación experta. Nuestra pasión es ver a nuestros clientes mejorar su calidad de vida a través de una nutrición adecuada y un régimen de ejercicios efectivo. Creemos que cada persona tiene el potencial de alcanzar sus metas, y estamos aquí para proporcionar el apoyo y la motivación necesarios.</p>
+                    <p>En nuestra empresa, nos apasiona ayudar a la gente porque entendemos que la salud y el bienestar son la base de una vida plena y satisfactoria. Nos dedicamos a educar y capacitar a nuestros clientes para que tomen decisiones informadas sobre su salud, ofreciéndoles las herramientas y el conocimiento que necesitan para tener éxito. Ya sea que estés buscando perder peso, ganar músculo, o simplemente llevar un estilo de vida más saludable, estamos aquí para ayudarte en cada paso del camino.</p>
+                    <p>Únete a nosotros y descubre cómo podemos trabajar juntos para transformar tu vida y alcanzar tus objetivos de salud y bienestar.</p>
+                </div>
+                <div class="about-image">
+                    <img src="sobre_nosotros.jpeg" alt="Sobre Nosotros">
+                </div>
+            </div>
+        </section>
+        
+        <section class="contact">
+            <h2>Contáctanos</h2>
+            <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos.</p>
+            <a href="#footer-container" class="btn">Ponerse en Contacto</a>
+            <div class="contact-info">
+                <div class="contact-text">
+                    <p>Nos encontramos en Gijón porque nos encanta el mar y es una ciudad que prima el deporte.</p>
+                </div>
+                <div class="contact-image">
+                    <img src="gijon.jpg" alt="Ubicación">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div id="footer-container"></div>
+
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                    script.src = 'header.js';
+                    document.body.appendChild(script);
+    // Configurar el carrusel de imágenes
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-img');
+    setInterval(() => {
+        if (images.length > 0) {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+    }, 3000);
+});
+
+    </script>
+</body>
+</html>

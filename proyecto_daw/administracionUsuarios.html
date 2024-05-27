@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Usuarios</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/administracionUsuarios.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="users-section">
+            <div class="header">
+                <h1 class="title">ADMINISTRACIÓN DE USUARIOS</h1>
+                <p class="description">Aquí podrás ver, editar y eliminar usuarios.</p>
+            </div>
+            <div class="users-list">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo Electrónico</th>
+                            <th>Sexo</th>
+                            <th>Peso (kg)</th>
+                            <th>Altura (cm)</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Juan Pérez</td>
+                            <td>juan.perez@example.com</td>
+                            <td>Hombre</td>
+                            <td>70</td>
+                            <td>175</td>
+                            <td>
+                                <button class="btn edit-button">✏️</button>
+                                <button class="btn delete-button">🗑️</button>
+                            </td>
+                        </tr>
+                        <!-- Puedes duplicar este bloque de <tr> para más usuarios -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                    script.src = 'header.js';
+                    document.body.appendChild(script);
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

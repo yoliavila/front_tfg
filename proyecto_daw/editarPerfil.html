@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/editarPerfil.css">
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="profile-form">
+            <h1 class="form-title">EDITAR PERFIL</h1>
+            <div class="profile-pic-container">
+                <img src="usuario.png" alt="Foto de Perfil" class="profile-pic" id="profilePic">
+                <input type="file" id="foto" name="foto" class="form-input" accept="image/*" style="display: none;">
+            </div>
+            <p class="form-description">Actualice la información de su perfil a continuación:</p>
+            <form class="form">
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <label for="correo" class="form-label">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" class="form-input" placeholder="Correo Electrónico">
+                </div>
+                <div class="form-group">
+                    <label for="sexo" class="form-label">Sexo:</label>
+                    <select id="sexo" name="sexo" class="form-input">
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="peso" class="form-label">Peso (kg):</label>
+                    <input type="number" id="peso" name="peso" class="form-input" placeholder="Peso">
+                </div>
+                <div class="form-group">
+                    <label for="altura" class="form-label">Altura (cm):</label>
+                    <input type="number" id="altura" name="altura" class="form-input" placeholder="Altura">
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn back-button">ATRÁS</button>
+                    <button type="submit" class="btn create-button">GUARDAR CAMBIOS</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                    script.src = 'header.js';
+                    document.body.appendChild(script);
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
