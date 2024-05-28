@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Rutina</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/editarRutina.css">
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="edit-routine-section">
+            <h1 class="form-title">Editar Rutina</h1>
+            <form id="edit-routine-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="titulo" class="form-label">Título:</label>
+                    <input type="text" id="titulo" name="titulo" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion" class="form-label">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" class="form-input" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="resumen" class="form-label">Resumen:</label>
+                    <textarea id="resumen" name="resumen" class="form-input" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="entrenador" class="form-label">Entrenador:</label>
+                    <input type="text" id="entrenador" name="entrenador" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="imagen" class="form-label">Nueva Imagen:</label>
+                    <input type="file" id="imagen" name="imagen" class="form-input" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <label for="video" class="form-label">Nuevo Video:</label>
+                    <input type="file" id="video" name="video" class="form-input" accept="video/*">
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn submit-button">Guardar Cambios</button>
+                    <button type="button" class="btn cancel-button" onclick="window.history.back();">Cancelar</button>
+                </div>
+            </form>
+            <div id="success-message" class="success-message" style="display: none;">
+                Rutina actualizada con éxito
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="editarRutina.js" defer></script>
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'header.js';
+                document.body.appendChild(script);
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

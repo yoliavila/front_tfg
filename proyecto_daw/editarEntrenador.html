@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Entrenador</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/editarEntrenador.css">
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="edit-trainer-section">
+            <h1 class="form-title">Editar Entrenador</h1>
+            <form id="edit-trainer-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="estudios" class="form-label">Estudios:</label>
+                    <textarea id="estudios" name="estudios" class="form-input" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imagen" class="form-label">Nueva Foto:</label>
+                    <input type="file" id="imagen" name="imagen" class="form-input" accept="image/*">
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn submit-button">Guardar Cambios</button>
+                    <button type="button" class="btn cancel-button" onclick="window.history.back();">Cancelar</button>
+                </div>
+            </form>
+            <div id="success-message" class="success-message" style="display: none;">
+                Entrenador actualizado con éxito
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="editarEntrenador.js" defer></script>
+    <script>
+        // Cargar el contenido del header
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                script.src = 'header.js';
+                document.body.appendChild(script);
+            });
+
+        // Cargar el contenido del footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
