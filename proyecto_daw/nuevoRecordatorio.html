@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Recordatorio</title>
     <link rel="stylesheet" href="/proyecto_daw/vistas/nuevoRecordatorio.css">
-    <script src="/proyecto_daw/nuevoRecordatorio.js" defer></script>
+    <script src="/proyecto_daw/js/nuevoRecordatorio.js" defer></script>
 </head>
 <body class="body">
     <div id="header-placeholder"></div>
@@ -38,7 +38,7 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                script.src = 'header.js';
+                script.src = 'js/header.js';
                 document.body.appendChild(script);
             });
 

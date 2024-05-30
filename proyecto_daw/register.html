@@ -13,7 +13,7 @@
     <div id="header-container"></div>
     <div class="login-container">
         <div class="login-box">
-            <img src="logo.png" alt="Logo" class="logo">
+            <img src="imagenes/logo.png" alt="Logo" class="logo">
             <h1>Register</h1>
             <form id="register-form">
                 <div class="input-group">
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div id="footer-container"></div>
-    <script src="register.js" defer></script>
+    <script src="js/register.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('header.html')
@@ -52,7 +52,7 @@
                 .then(data => {
                     document.getElementById('header-container').innerHTML = data;
                     const script = document.createElement('script');
-                    script.src = 'header.js';
+                    script.src = 'js/header.js';
                     document.body.appendChild(script);
                 });
 

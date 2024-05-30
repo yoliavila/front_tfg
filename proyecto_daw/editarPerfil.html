@@ -15,7 +15,7 @@
         <section class="profile-form">
             <h1 class="form-title">EDITAR PERFIL</h1>
             <div class="profile-pic-container">
-                <img src="usuario.png" alt="Foto de Perfil" class="profile-pic" id="profilePic">
+                <img src="imagenes/usuario.png" alt="Foto de Perfil" class="profile-pic" id="profilePic">
                 <input type="file" id="foto" name="foto" class="form-input" accept="image/*" style="display: none;">
             </div>
             <p class="form-description">Actualice la información de su perfil a continuación:</p>
@@ -60,7 +60,7 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                    script.src = 'header.js';
+                    script.src = 'js/header.js';
                     document.body.appendChild(script);
             });
 

@@ -12,7 +12,7 @@
     <div id="header-container"></div>
     <div class="login-container">
         <div class="login-box">
-            <img src="logo.png" alt="Logo" class="logo">
+            <img src="imagenes/logo.png" alt="Logo" class="logo">
             <h1>Login</h1>
             <form>
                 <div class="input-group">
@@ -35,7 +35,7 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                    script.src = 'header.js';
+                    script.src = 'js/header.js';
                     document.body.appendChild(script);
             });
 

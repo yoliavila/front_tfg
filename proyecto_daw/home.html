@@ -15,18 +15,18 @@
         </section>
         <section class="content">
             <div class="card">
-                <img src="diet.jpg" alt="Diet">
+                <img src="imagenes/diet.jpg" alt="Diet">
                 <h2>Diets</h2>
                 <p>Find a variety of healthy diet plans tailored to your needs.</p>
             </div>
             <div class="card">
-                <img src="exercise.jpg" alt="Exercise">
+                <img src="imagenes/exercise.jpg" alt="Exercise">
                 <h2>Exercises</h2>
                 <p>Explore exercises to improve your fitness and strength.</p>
             </div>
         </section>
     </main>
-    <script src="/vistas/header.js"></script>
+    <script src="js/header.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('/partials/header.html')
@@ -34,7 +34,7 @@
                 .then(data => {
                     document.getElementById('header').innerHTML = data;
                     const script = document.createElement('script');
-                    script.src = '/vistas/header.js';
+                    script.src = 'js/header.js';
                     document.body.appendChild(script);
                 });
         });

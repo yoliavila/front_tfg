@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
     <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
     <link rel="stylesheet" href="/proyecto_daw/vistas/misRecordatoriosUsuario.css">
-    <script src="/proyecto_daw/misRecordatorios.js" defer></script>
+    <script src="/proyecto_daw/js/misRecordatorios.js" defer></script>
 </head>
 <body class="body">
     <div id="header-placeholder"></div>
@@ -15,10 +15,10 @@
     <main class="main-content">
         <section class="reminders-section">
             <div class="header">
-                <img src="logo.png" alt="Logo" class="logo">
+                <img src="imagenes/logo.png" alt="Logo" class="logo">
                 <h1 class="title">RECORDATORIOS</h1>
                 <div class="profile-icon-container">
-                    <img src="usuario.png" alt="Perfil" class="profile-icon">
+                    <img src="imagenes/usuario.png" alt="Perfil" class="profile-icon">
                 </div>
             </div>
             <p class="description">Aquí podrás añadir, borrar y editar recordatorios.</p>
@@ -43,7 +43,7 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                script.src = 'header.js';
+                script.src = 'js/header.js';
                 document.body.appendChild(script);
             });
 

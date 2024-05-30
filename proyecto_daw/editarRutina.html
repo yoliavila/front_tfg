@@ -52,7 +52,7 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="editarRutina.js" defer></script>
+    <script src="js/editarRutina.js" defer></script>
     <script>
         // Cargar el contenido del header
         fetch('header.html')
@@ -60,7 +60,7 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                script.src = 'header.js';
+                script.src = 'js/header.js';
                 document.body.appendChild(script);
             });
 

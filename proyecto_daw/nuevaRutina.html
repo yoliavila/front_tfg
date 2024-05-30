@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Rutina de Ejercicios</title>
     <link rel="stylesheet" href="/proyecto_daw/vistas/nuevaRutina.css">
-    <script src="/proyecto_daw/nuevaRutina.js" defer></script>
+    <script src="/proyecto_daw/js/nuevaRutina.js" defer></script>
 
 </head>
 <body class="body">
@@ -55,7 +55,7 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                script.src = 'header.js';
+                script.src = 'js/header.js';
                 document.body.appendChild(script);
             });
 

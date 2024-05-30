@@ -20,7 +20,7 @@
             </section>
             <section class="trainer-info">
                 <div class="trainer-pic-container">
-                    <img src="entrenadora1.jpg" alt="Foto del Entrenador" class="trainer-pic">
+                    <img src="imagenes/entrenadora1.jpg" alt="Foto del Entrenador" class="trainer-pic">
                 </div>
                 <p class="trainer-name">Nombre del Entrenador</p>
             </section>
@@ -41,7 +41,7 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                script.src = 'header.js';
+                script.src = 'js/header.js';
                 document.body.appendChild(script);
             });
 
