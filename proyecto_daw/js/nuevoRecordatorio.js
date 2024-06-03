@@ -30,6 +30,8 @@ let registrarRecordatorio = async () => {
 
         const respuesta = await peticion.json();
         console.log('Recordatorio registrado:', respuesta);
+        window.location.href = 'misRecordatoriosUsuario.html';
+
     } catch (error) {
         console.error('Error registrando recordatorio:', error);
     }

@@ -26,10 +26,11 @@ document.getElementById('register-form').addEventListener('submit', function(eve
     }
 
     if (valid) {
-        // Aquí se hace la llamada al backend para registrar al usuario
         let campos = {
             username: username,
-            email: email,
+            cliente: {
+                correo: email
+            },
             password: password
         };
 

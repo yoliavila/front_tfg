@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="vistas/login.css">
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="vistas/header.css">
     <link rel="stylesheet" href="vistas/footer.css">
+    <link rel="stylesheet" href="vistas/adminPanel.css">
 </head>
 <body>
     <div id="header-container"></div>
-    <div class="login-container">
-        <div class="login-box">
-            <img src="imagenes/logo.png" alt="Logo" class="logo">
-            <h1>Login</h1>
-            <form id="login-form">
-                <div class="input-group">
-                    <label for="username">Username*</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password*</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div id="error-message" class="error-message"></div>
-                <button type="submit" class="btn">Login</button>
-            </form>
-            <p>¿No tienes una cuenta? <a href="register.html">Regístrate</a></p>
-        </div>
+    <div class="main-content">
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">Ver Rutinas</a></li>
+                <li><a href="#">Ver Recetas</a></li>
+                <li><a href="#">Ver Usuarios</a></li>
+                <li><a href="#">Nueva Receta</a></li>
+                <li><a href="#">Nueva Rutina</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h1>Bienvenido al Panel de Administración</h1>
+            <p>Selecciona una opción del menú para empezar.</p>
+        </section>
     </div>
     <div id="footer-container"></div>
-    <script src="js/login.js" defer></script>
+    <script src="js/header.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('header.html')

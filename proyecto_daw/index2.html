@@ -34,7 +34,7 @@
                     </div>
                     <div class="card-texto">
                         <h3>Nutrición</h3>
-                        <p>Planes de dieta personalizados para adaptarse a tu estilo de vida.</p>
+                    <p>Planes de dieta personalizados para adaptarse a tu estilo de vida.</p>
                     </div>
                 </div>
 
@@ -54,9 +54,10 @@
                     </div>
                     <div class="card-texto">
                         <h3>Entrenamiento</h3>
-                        <p>Coaching personalizado para mantenerte en el camino correcto.</p>
+                    <p>Coaching personalizado para mantenerte en el camino correcto.</p>
                     </div>
                 </div>
+
             </div>
         </section>
         
@@ -115,29 +116,29 @@
         fetch('header.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                const script = document.createElement('script');
-                script.src = 'js/header.js';
-                document.body.appendChild(script);
+                document.getElementById('header-placeholder').innerHTML = data;
             });
 
         // Cargar el contenido del footer
         fetch('footer.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
+                document.getElementById('footer-placeholder').innerHTML = data;
+                const script = document.createElement('script');
+                    script.src = 'js/header.js';
+                    document.body.appendChild(script);
+    // Configurar el carrusel de imágenes
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.carousel-img');
+    setInterval(() => {
+        if (images.length > 0) {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+    }, 3000);
+});
 
-        // Configurar el carrusel de imágenes
-        let currentIndex = 0;
-        const images = document.querySelectorAll('.carousel-img');
-        setInterval(() => {
-            if (images.length > 0) {
-                images[currentIndex].classList.remove('active');
-                currentIndex = (currentIndex + 1) % images.length;
-                images[currentIndex].classList.add('active');
-            }
-        }, 3000);
     </script>
 </body>
 </html>
