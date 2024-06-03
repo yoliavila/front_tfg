@@ -27,27 +27,31 @@ document.getElementById('register-form').addEventListener('submit', function(eve
 
     if (valid) {
         // Aquí se hace la llamada al backend para registrar al usuario
-        const requestData = {
+        let campos = {
             username: username,
             email: email,
             password: password
         };
 
-        fetch('http://localhost:3398/api/addRegistro', {
+        fetch("http://localhost:3398/api/addRegistro", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json'
             },
-            body: new URLSearchParams(requestData)
+            body: JSON.stringify(campos)
         })
-        .then(response => response.text())
-        .then(data => {
-            if (data === 'User registered successfully') {
-                alert('Registro exitoso');
-            } else {
-                alert(data);
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
+            return response.json();
         })
-        .catch(error => console.error('Error:', error));
+        .then(data => {
+            console.log('Usuario registrado:', data);
+            alert('Usuario registrado con éxito');
+        })
+        .catch(error => {
+            console.error('Error registrando usuario:', error);
+        });
     }
 });
