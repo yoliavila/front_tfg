@@ -1,60 +1,30 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-    color: #333;
-}
-
+/* adminPanel.css */
 .main-content {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px); /* Ajusta el espacio para el header y el footer */
 }
 
-.sidebar {
-    width: 250px;
-    background-color: #f4f4f4;
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espacio entre los botones */
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
+.admin-button {
+    width: 200px;
+    padding: 15px;
+    font-size: 16px;
+    background-color: #800020;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.sidebar ul li {
-    margin-bottom: 20px;
-}
-
-.sidebar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-}
-
-.sidebar ul li a:hover {
-    text-decoration: underline;
-}
-
-.content {
-    flex: 1;
-    padding: 20px;
-}
-
-.content h1 {
-    font-size: 28px;
-    color: #333;
-}
-
-.content p {
-    font-size: 18px;
-    color: #666;
-}
-
-#header-container {
-    margin-bottom: 0;
-}
-
-#footer-container {
-    margin-top: 20px;
+.admin-button:hover {
+    background-color: #a0002c;
 }

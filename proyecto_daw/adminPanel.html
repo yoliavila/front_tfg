@@ -11,22 +11,15 @@
 <body>
     <div id="header-container"></div>
     <div class="main-content">
-        <aside class="sidebar">
-            <ul>
-                <li><a href="#">Ver Rutinas</a></li>
-                <li><a href="#">Ver Recetas</a></li>
-                <li><a href="#">Ver Usuarios</a></li>
-                <li><a href="#">Nueva Receta</a></li>
-                <li><a href="#">Nueva Rutina</a></li>
-            </ul>
-        </aside>
-        <section class="content">
-            <h1>Bienvenido al Panel de Administración</h1>
-            <p>Selecciona una opción del menú para empezar.</p>
-        </section>
+        <div class="button-container">
+            <button class="admin-button">Ver Rutinas</button>
+            <button class="admin-button">Ver Recetas</button>
+            <button class="admin-button">Ver Usuarios</button>
+            <button class="admin-button">Nueva Receta</button>
+            <button class="admin-button">Nueva Rutina</button>
+        </div>
     </div>
     <div id="footer-container"></div>
-    <script src="js/header.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('header.html')

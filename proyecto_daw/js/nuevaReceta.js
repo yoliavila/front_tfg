@@ -1,34 +1,31 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    let boton = document.querySelector(".submit-button");
-    boton.addEventListener("click", (evento) => {
-        evento.preventDefault();  // Evita el envío del formulario por defecto
-        registrarReceta();
+document.getElementById('recipeForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('titulo', document.getElementById('titulo').value);
+    formData.append('resumen', document.getElementById('resumen').value);
+    formData.append('descripcion', document.getElementById('descripcion').value);
+    formData.append('imagen', document.getElementById('foto').files[0]);
+    formData.append('video', document.getElementById('video').files[0]);
+
+    fetch('http://localhost:3398/api/registrarRecetas', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        return response.text().then(text => { throw new Error(text) });
+    })
+    .then(data => {
+        console.log('Receta registrada exitosamente:', data);
+        alert('Receta registrada exitosamente');
+        // Limpiar el formulario si es necesario
+        document.getElementById('recipeForm').reset();
+    })
+    .catch(error => {
+        console.error('Error al registrar la receta:', error);
+        alert('Error al registrar la receta: ' + error.message);
     });
 });
-
-let registrarReceta = async () => {
-    let campos = {};
-
-    campos.titulo = document.getElementById("titulo").value;
-    campos.resumen = document.getElementById("resumen").value;
-    campos.descripcion = document.getElementById("descripcion").value;
-
-    try {
-        const peticion = await fetch("http://localhost:3398/api/registrarRecetas", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(campos)
-        });
-
-        if (!peticion.ok) {
-            throw new Error(`HTTP error! status: ${peticion.status}`);
-        }
-
-        const respuesta = await peticion.json();
-        console.log('Receta registrada:', respuesta);
-    } catch (error) {
-        console.error('Error registrando receta:', error);
-    }
-};

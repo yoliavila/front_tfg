@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Receta</title>
     <link rel="stylesheet" href="/proyecto_daw/vistas/nuevaReceta.css">
-    <script src="/proyecto_daw/js/nuevaReceta.js" defer></script>
 </head>
 <body class="body">
     <div id="header-placeholder"></div>
@@ -13,7 +12,7 @@
     <main class="main-content">
         <section class="recipe-form-section">
             <h1 class="form-title">Crear Nueva Receta</h1>
-            <form class="recipe-form">
+            <form class="recipe-form" id="recipeForm">
                 <div class="form-group">
                     <label for="titulo" class="form-label">Título de la Receta:</label>
                     <input type="text" id="titulo" name="titulo" class="form-input" placeholder="Título de la receta" required>
@@ -61,5 +60,6 @@
                 document.getElementById('footer-placeholder').innerHTML = data;
             });
     </script>
+    <script src="/proyecto_daw/js/nuevaReceta.js" defer></script>
 </body>
 </html>
