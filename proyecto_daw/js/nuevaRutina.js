@@ -1,11 +1,6 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelector(".submit-button").addEventListener("click", (evento) => {
-        evento.preventDefault();  // Evita el envío del formulario por defecto
-        registrarRutina();
-    });
-});
+document.getElementById('routine-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-let registrarRutina = async () => {
     const formData = new FormData();
     formData.append('titulo', document.getElementById('titulo').value);
     formData.append('resumen', document.getElementById('resumen').value);
@@ -14,24 +9,24 @@ let registrarRutina = async () => {
     formData.append('imagen', document.getElementById('foto').files[0]);
     formData.append('video', document.getElementById('video').files[0]);
 
-    try {
-        const peticion = await fetch('http://localhost:3398/api/registrarRutinas', {
-            method: 'POST',
-            body: formData
-        });
-
-        if (peticion.ok) {
-            const respuesta = await peticion.json();
-            console.log('Rutina registrada exitosamente:', respuesta);
-            alert('Rutina registrada exitosamente');
-            // Limpiar el formulario si es necesario
-            document.querySelector('.routine-form').reset();
-        } else {
-            const errorText = await peticion.text();
-            throw new Error(`HTTP error! status: ${peticion.status}, message: ${errorText}`);
+    fetch('http://localhost:3398/api/registrarRutina', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            return response.json();
         }
-    } catch (error) {
-        console.error('Error registrando rutina:', error);
-        alert('Error registrando rutina: ' + error.message);
-    }
-};
+        return response.text().then(text => { throw new Error(text) });
+    })
+    .then(data => {
+        console.log('Rutina registrada exitosamente:', data);
+        alert('Rutina registrada exitosamente');
+        // Limpiar el formulario si es necesario
+        document.getElementById('routine-form').reset();
+    })
+    .catch(error => {
+        console.error('Error al registrar la rutina:', error);
+        alert('Error al registrar la rutina: ' + error.message);
+    });
+});

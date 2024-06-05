@@ -8,7 +8,7 @@ body {
 
 .main-content {
     padding: 2rem;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     background-color: white;
     border-radius: 10px;
@@ -31,8 +31,7 @@ label {
 }
 
 input[type="text"],
-input[type="file"],
-textarea {
+input[type="file"] {
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #ccc;
@@ -53,13 +52,4 @@ button {
 
 button:hover {
     background-color: #0056b3;
-}
-
-.form-buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.form-buttons .btn {
-    width: 48%;
 }

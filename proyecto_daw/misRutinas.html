@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Rutinas</title>
-    <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
-    <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
-    <link rel="stylesheet" href="/proyecto_daw/vistas/misRutinasUsuario.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/misRutinas.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/verRutina.css">
+    <script src="/proyecto_daw/js/misRutinas.js" defer></script>
 </head>
 <body class="body">
     <div id="header-placeholder"></div>
@@ -21,10 +21,31 @@
                 <!-- Las rutinas se cargarán aquí dinámicamente -->
             </div>
         </section>
+        <section class="routine-details-section" style="display: none;">
+            <h1 id="routine-title">Título de la Rutina</h1>
+            <div class="routine-container">
+                <section class="routine-video">
+                    <video controls>
+                        <source id="routine-video" src="" type="video/mp4">
+                        Tu navegador no soporta la reproducción de videos.
+                    </video>
+                </section>
+                <section class="trainer-info">
+                    <div class="trainer-pic-container">
+                        <img id="trainer-pic" src="" alt="Foto del Entrenador" class="trainer-pic">
+                    </div>
+                    <p id="trainer-name" class="trainer-name">Nombre del Entrenador</p>
+                </section>
+            </div>
+            <section class="routine-details">
+                <p id="routine-description">Descripción de la rutina.</p>
+                <p id="routine-summary">Resumen: <span></span></p>
+            </section>
+            <button onclick="mostrarListaRutinas()">Volver</button>
+        </section>
     </main>
     <div id="footer-placeholder"></div>
 
-    <script src="js/misRutinas.js" defer></script>
     <script>
         // Cargar el contenido del header
         fetch('header.html')
@@ -32,8 +53,8 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                    script.src = 'js/header.js';
-                    document.body.appendChild(script);
+                script.src = 'js/header.js';
+                document.body.appendChild(script);
             });
 
         // Cargar el contenido del footer

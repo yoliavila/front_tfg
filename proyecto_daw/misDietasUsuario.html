@@ -7,18 +7,24 @@
     <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
     <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
     <link rel="stylesheet" href="/proyecto_daw/vistas/misDietasUsuario.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/verReceta.css">
 </head>
 <body class="body">
     <div id="header-placeholder"></div>
 
     <main class="main-content">
-        <section class="diets-section">
+        <section class="diets-section diets-list-section">
             <div class="header">
                 <h1 class="title">MIS RECETAS</h1>
                 <p class="description">Tus recetas se almacenarán en este espacio pudiendo cambiarlas y eliminarlas a tu gusto.</p>
             </div>
             <div class="diets-list">
                 <!-- Las recetas se cargarán aquí dinámicamente -->
+            </div>
+        </section>
+        <section class="recipe-details-section" style="display: none;">
+            <div id="recipeInfo" class="recipe-info">
+                <!-- Los detalles de la receta se cargarán aquí -->
             </div>
         </section>
     </main>
@@ -32,8 +38,8 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                    script.src = 'js/header.js';
-                    document.body.appendChild(script);
+                script.src = 'js/header.js';
+                document.body.appendChild(script);
             });
 
         // Cargar el contenido del footer

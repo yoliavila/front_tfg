@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Recetas</title>
+    <link rel="stylesheet" href="/proyecto_daw/vistas/administracionRecetas.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/footer.css">
+    <link rel="stylesheet" href="/proyecto_daw/vistas/header.css">
+</head>
+<body class="body">
+    <div id="header-placeholder"></div>
+
+    <main class="main-content">
+        <section class="recetas-section">
+            <div class="header">
+                <h1 class="title">ADMINISTRACIÓN DE RECETAS</h1>
+                <p class="description">Aquí podrás ver, editar y eliminar recetas.</p>
+            </div>
+            <div class="recetas-list">
+                <table class="recetas-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Resumen</th>
+                            <th>Descripción</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las recetas se cargarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script src="js/administracionRecetas.js"></script>
+</body>
+</html>

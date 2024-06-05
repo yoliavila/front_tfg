@@ -53,6 +53,7 @@
     </main>
     <div id="footer-placeholder"></div>
 
+    <script src="js/editarPerfil.js" defer></script>
     <script>
         // Cargar el contenido del header
         fetch('header.html')
@@ -60,8 +61,8 @@
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 const script = document.createElement('script');
-                    script.src = 'js/header.js';
-                    document.body.appendChild(script);
+                script.src = 'js/header.js';
+                document.body.appendChild(script);
             });
 
         // Cargar el contenido del footer

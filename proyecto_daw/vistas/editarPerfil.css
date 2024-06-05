@@ -10,7 +10,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Cambiar height a min-height para que se adapte al contenido */
+    padding-top: 2rem; /* Añadir padding-top para separar el contenido del header */
 }
 
 .profile-form {
