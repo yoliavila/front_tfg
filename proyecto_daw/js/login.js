@@ -35,7 +35,10 @@ document.getElementById('login-form').addEventListener('submit', function(event)
             console.log('Login exitoso:', data);
             alert('Login exitoso');
             localStorage.setItem('isAuthenticated', 'true');
-            if (username === 'admin') {
+            localStorage.setItem('userId', data.id);
+            localStorage.setItem('clienteId', data.clienteId);
+            localStorage.setItem('username', data.username); // Guardar el nombre de usuario
+            if (data.username === 'admin') {
                 localStorage.setItem('isAdmin', 'true');
             } else {
                 localStorage.setItem('isAdmin', 'false');

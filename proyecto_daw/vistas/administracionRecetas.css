@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f7f7f7;
 }
 
 .main-content {
@@ -25,22 +26,22 @@
     color: #555;
 }
 
-.recetas-list {
+.recipes-list {
     overflow-x: auto;
 }
 
-.recetas-table {
+.recipes-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.recetas-table th, .recetas-table td {
+.recipes-table th, .recipes-table td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-.recetas-table th {
+.recipes-table th {
     background-color: #f2f2f2;
 }
 

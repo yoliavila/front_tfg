@@ -80,7 +80,6 @@ async function guardarCambios(id) {
             throw new Error(`HTTP error! status: ${respuesta.status}`);
         }
 
-        const cliente = await respuesta.json();
         alert('Cambios guardados exitosamente');
     } catch (error) {
         console.error('Error guardando cambios:', error);

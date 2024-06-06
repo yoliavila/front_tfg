@@ -50,6 +50,20 @@ function editRutina(id) {
 }
 
 function deleteRutina(id) {
-    // Implementa la lógica de eliminación
-    console.log('Delete rutina', id);
-}
+    if (confirm('¿Estás seguro de que quieres eliminar esta rutina?')) {
+        fetch(`http://localhost:3398/api/admin/rutinas/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Rutina eliminada correctamente');
+                fetchRutinas();
+            } else {
+                throw new Error('Error al eliminar la rutina');
+            }
+        })
+        .catch(error => {
+            console.error('Error eliminando rutina:', error);
+            alert('Error eliminando rutina');
+        });
+    }}
