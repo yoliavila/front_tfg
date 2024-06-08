@@ -5,14 +5,34 @@ body {
     padding: 0;
     background-color: #f7f7f7;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .main-content {
     padding: 2rem;
+    flex: 1; /* Permite que el contenido principal ocupe el espacio disponible */
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Colocar el video detrás del contenido */
+    overflow: hidden;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .routines-section {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -84,4 +104,41 @@ body {
 
 .routine-link:hover {
     text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    color: #ccc;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; /* Hace que el footer esté siempre al final de la página */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-content .logo img {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.footer-content .contact-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.footer-content .social-media a {
+    color: #ccc;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-content .social-media a:hover {
+    color: #fff;
 }

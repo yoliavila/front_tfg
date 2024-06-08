@@ -72,11 +72,17 @@ let mostrarReceta = (receta) => {
     const recipeInfo = document.getElementById('recipeInfo');
     recipeInfo.innerHTML = `
         <h1 id="recipe-title">${receta.titulo}</h1>
-        <video controls>
-            <source src="data:video/mp4;base64,${receta.videoBase64}" type="video/mp4">
-            Tu navegador no soporta la reproducción de videos.
-        </video>
-        <p id="recipe-description">${receta.descripcion}</p>
+        <div class="recipe-container">
+            <section class="recipe-video">
+                <video controls id="recipe-video">
+                    <source src="data:video/mp4;base64,${receta.videoBase64}" type="video/mp4">
+                    Tu navegador no soporta la reproducción de videos.
+                </video>
+            </section>
+            <section class="recipe-details">
+                <p id="recipe-description">${receta.descripcion}</p>
+            </section>
+        </div>
         <button onclick="mostrarListaRecetas()">Volver</button>
     `;
     document.querySelector('.diets-list-section').style.display = 'none';

@@ -21,13 +21,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         })
         .then(response => {
             if (!response.ok) {
-                if (response.status === 404) {
-                    throw new Error('El usuario no existe');
-                } else if (response.status === 401) {
-                    throw new Error('Contraseña incorrecta');
-                } else {
-                    throw new Error(`Error HTTP! status: ${response.status}`);
-                }
+                throw new Error('login incorrecto');
             }
             return response.json();
         })
@@ -47,7 +41,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         })
         .catch(error => {
             console.error('Error en el login:', error);
-            errorDiv.textContent = error.message;
+            errorDiv.textContent = 'login incorrecto';
         });
     } else {
         errorDiv.textContent = 'Por favor, complete todos los campos.';

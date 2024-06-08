@@ -15,7 +15,7 @@ body {
 
 #routine-title {
     font-size: 32px;
-    color: #333;
+    color: #f7f7f7;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -51,19 +51,20 @@ body {
     margin: 0 auto 1rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .trainer-info .trainer-pic {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
-    position: absolute;
 }
 
 .trainer-name {
     font-size: 20px;
-    color: #333;
+    color: #f7f7f7;
 }
 
 .routine-details {

@@ -27,20 +27,22 @@ function fetchClientes() {
             const tbody = document.querySelector('.users-table tbody');
             tbody.innerHTML = '';
             data.forEach(cliente => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td>${cliente.id}</td>
-                    <td>${cliente.nombre}</td>
-                    <td>${cliente.correo}</td>
-                    <td>${cliente.sexo}</td>
-                    <td>${cliente.altura}</td>
-                    <td>${cliente.peso}</td>
-                    <td>
-                        <button class="btn edit-button" onclick="editCliente(${cliente.id})">✏️</button>
-                        <button class="btn delete-button" onclick="deleteCliente(${cliente.id})">🗑️</button>
-                    </td>
-                `;
-                tbody.appendChild(tr);
+                if (cliente.nombre !== 'admin') { // Excluir el cliente con nombre 'admin'
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${cliente.id}</td>
+                        <td>${cliente.nombre}</td>
+                        <td>${cliente.correo}</td>
+                        <td>${cliente.sexo}</td>
+                        <td>${cliente.altura}</td>
+                        <td>${cliente.peso}</td>
+                        <td>
+                            <button class="btn edit-button" onclick="editCliente(${cliente.id})">✏️</button>
+                            <button class="btn delete-button" onclick="deleteCliente(${cliente.id})">🗑️</button>
+                        </td>
+                    `;
+                    tbody.appendChild(tr);
+                }
             });
         })
         .catch(error => {

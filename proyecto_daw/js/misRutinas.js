@@ -47,6 +47,8 @@ let mostrarRutinas = (rutinas) => {
 
 let mostrarDetalleRutina = async (id) => {
     try {
+        console.log('Rutina ID:', id); // Verificar que el ID se obtiene correctamente
+
         const respuesta = await fetch(`http://localhost:3398/api/rutina/${id}`, {
             method: 'GET',
             headers: {
@@ -67,17 +69,29 @@ let mostrarDetalleRutina = async (id) => {
 };
 
 let mostrarRutina = (rutina) => {
-    document.querySelector('.routines-section').style.display = 'none';
-    document.querySelector('.routine-details-section').style.display = 'block';
-
+    console.log('Mostrar rutina:', rutina); // Verificar que la rutina se muestra correctamente
     document.getElementById('routine-title').innerText = rutina.titulo;
     document.getElementById('routine-description').innerText = rutina.descripcion;
     document.getElementById('routine-summary').querySelector('span').innerText = rutina.resumen;
-    const videoElement = document.getElementById('routine-video');
-    videoElement.src = `data:video/mp4;base64,${rutina.videoBase64}`;
-    const trainerPicElement = document.getElementById('trainer-pic');
-    trainerPicElement.src = `data:image/jpeg;base64,${rutina.imagenEntrenadorBase64}`;
+
+    if (rutina.videoBase64) {
+        const videoElement = document.getElementById('routine-video');
+        videoElement.innerHTML = `<source src="data:video/mp4;base64,${rutina.videoBase64}" type="video/mp4">`;
+        videoElement.load();
+    } else {
+        document.getElementById('routine-video').style.display = 'none';
+    }
+
+    if (rutina.imagenEntrenadorBase64) {
+        document.getElementById('trainer-pic').src = `data:image/jpeg;base64,${rutina.imagenEntrenadorBase64}`;
+    } else {
+        document.getElementById('trainer-pic').style.display = 'none';
+    }
+
     document.getElementById('trainer-name').innerText = rutina.nombreEntrenador;
+
+    document.querySelector('.routines-section').style.display = 'none';
+    document.querySelector('.routine-details-section').style.display = 'block';
 };
 
 let mostrarListaRutinas = () => {

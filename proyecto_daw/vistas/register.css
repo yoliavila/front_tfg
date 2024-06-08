@@ -11,7 +11,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    padding: 2rem;
+    margin-top: 80px; /* Ajusta según la altura del header */
+    margin-bottom: 80px; /* Ajusta según la altura del footer */
 }
 
 .login-box {
@@ -59,7 +61,7 @@ body {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     color: white;
-    background-color: #007bff;
+    background-color: #28a745;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -67,7 +69,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #28a745;
 }
 
 .error-message {

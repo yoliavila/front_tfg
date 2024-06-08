@@ -11,7 +11,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Cambiar height a min-height para que se adapte al contenido */
-    padding-top: 2rem; /* Añadir padding-top para separar el contenido del header */
+    padding-top: 10rem; /* Añadir padding-top para separar el contenido del header */
+    
 }
 
 .profile-form {

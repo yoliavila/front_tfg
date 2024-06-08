@@ -9,13 +9,18 @@
     <script src="/proyecto_daw/js/misRutinas.js" defer></script>
 </head>
 <body class="body">
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="/proyecto_daw/imagenes/gym1.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de videos.
+        </video>
+    </div>
     <div id="header-placeholder"></div>
 
     <main class="main-content">
         <section class="routines-section">
             <div class="header">
                 <h1 class="title">MIS RUTINAS</h1>
-                <p class="description">Tus rutinas se almacenarán en este espacio pudiendo cambiarlas y eliminarlas a tu gusto.</p>
             </div>
             <div class="routines-list">
                 <!-- Las rutinas se cargarán aquí dinámicamente -->
@@ -25,8 +30,7 @@
             <h1 id="routine-title">Título de la Rutina</h1>
             <div class="routine-container">
                 <section class="routine-video">
-                    <video controls>
-                        <source id="routine-video" src="" type="video/mp4">
+                    <video controls id="routine-video">
                         Tu navegador no soporta la reproducción de videos.
                     </video>
                 </section>

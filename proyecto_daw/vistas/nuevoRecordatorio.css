@@ -6,17 +6,13 @@ body {
     color: #333;
 }
 
-.header, .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
+
 
 .main-content {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
     height: 80vh;
 }
 

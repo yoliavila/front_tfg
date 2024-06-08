@@ -9,7 +9,7 @@ body {
 .main-content {
     padding: 2rem;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 100px auto 80px auto; /* Añade márgenes superior e inferior */
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -42,7 +42,7 @@ button {
     display: block;
     width: 100%;
     padding: 0.75rem;
-    background-color: #007bff;
+    background-color: #28a745;
     color: white;
     border: none;
     border-radius: 5px;
@@ -51,5 +51,5 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #00b368;
 }
